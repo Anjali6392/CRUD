@@ -1,0 +1,60 @@
+
+{{>header}}
+<title>CRUD | Add</title>
+{{>navbar}}
+<div class="container-fluid mt-1">
+    <div class="w-75 m-auto">
+        <h5 class="background text-center text-light p-2">Create Employee Record</h5>
+        {{#if show}}
+        <div class="alert alert-danger text-center alert-dismissible fade show" role="alert">
+            {{error}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {{/if}}
+        <form action="/add/" method="post">
+            <div class="row mb-3">
+                <div class="col-12">
+                    <input type="text" name="name" placeholder="Enter Full Name : " class="form-control"
+                        value="{{data.name}}">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <input type="email" name="email" placeholder="Enter Email Address : " class="form-control"
+                        value="{{data.email}}">
+                </div>
+                <div class="col-md-6">
+                    <input type="text" name="phone" placeholder="Enter Phone Number : " class="form-control"
+                        value="{{data.phone}}">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <input type="text" name="dsg" placeholder="Enter Designation : " class="form-control"
+                        value="{{data.dsg}}">
+                </div>
+                <div class="col-md-6">
+                    <input type="number" name="salary" placeholder="Enter Salary : " class="form-control"
+                        value="{{data.salary}}">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <input type="text" name="city" placeholder="Enter City Name : " class="form-control">
+                </div>
+                <div class="col-md-6">
+                    <input type="text" name="state" placeholder="Enter State Name : " class="form-control">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-6">
+                    <button class="btn btn-danger w-100 btn-sm" type="reset">Reset</button>
+                </div>
+                <div class="col-6">
+                    <button class="border-0 p-1 rounded background text-light w-100 btn-sm" type="submit">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{{>footer}}
